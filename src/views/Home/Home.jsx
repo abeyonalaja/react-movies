@@ -1,4 +1,5 @@
 import React from "react";
+import { pageWithLayout } from "../../containers/page";
 
 export const Home = props => (
   <div className="home">
@@ -6,4 +7,4 @@ export const Home = props => (
   </div>
 );
 
-export default Home;
+export default pageWithLayout(Home);
