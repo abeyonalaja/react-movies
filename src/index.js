@@ -7,5 +7,12 @@ import registerServiceWorker from './registerServiceWorker';
 const MOUNT = document.getElementById('root');
 const renderApp = Comp => ReactDOM.render(Comp, MOUNT)
 
-ReactDOM.render(<App />, document.getElementById('root'));
-registerServiceWorker();
+if(module.hot){
+    module.hot.accept('./App', () => {
+        // accept hot change request
+        const NextApp = require('./App').default
+        renderApp(<NextApp />)
+    })
+}
+renderApp(<App />)
+
