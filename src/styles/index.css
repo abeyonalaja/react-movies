@@ -1,7 +1,5 @@
 @import "normalize.css";
 @import "./variables.css";
-body {
-  font-family: sans-serif;
-  padding: 0;
-  margin: 0;
-}
+@import "./body.css";
+@import "./container.css";
+@import "../components/Sidebar/Sidebar.css";
