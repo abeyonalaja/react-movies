@@ -1,4 +1,4 @@
-import { encode } from "iconv-lite";
+// import { encode } from "iconv-lite";
 
 const BASE_URL = "http://localhost:3456";
 const defaultFetchOpts = {};
@@ -56,6 +56,5 @@ export const makeAuthFetch = (path, opts = {}) => {
     }
   };
 
-  let a = { test: "123" };
   return makeFetch(path, fetchOpts);
 };

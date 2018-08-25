@@ -1,8 +1,9 @@
 import withSidebarLayout from "./withSidebarLayout";
 import WithRouter from "./WithRouter";
+import withMovieConfig from "./withMovieConfig";
 
-export const PageWithoutLayout = Wrapped => {
-  return WithRouter(Wrapped);
+export const pageWithoutLayout = Wrapped => {
+  return withMovieConfig(WithRouter(Wrapped));
 };
 export const pageWithLayout = Wrapped => withSidebarLayout(Wrapped);
 

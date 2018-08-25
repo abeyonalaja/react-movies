@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import { pageWithLayout } from "../../containers/page";
+import { pageWithoutLayout, pageWithLayout } from "../../containers/page";
 import { discover } from "../../data/api/movies";
+import { Poster } from "../../components/Poster/Poster";
 
 export class Home extends Component {
   state = { movies: [] };
@@ -14,11 +15,14 @@ export class Home extends Component {
   }
   render() {
     const { movies } = this.state;
+    const { movieConfig } = this.props;
     return (
       <div className="home">
         <h2>Welcome home</h2>
-        <button>Discover</button>
-        <pre>{JSON.stringify(movies, null, 2)}</pre>
+        {movies &&
+          movies.map(movie => (
+            <Poster key={movie.id} movieConfig={movieConfig} {...movie} />
+          ))}
 
         <Link to="/about">About us</Link>
       </div>
@@ -26,4 +30,4 @@ export class Home extends Component {
   }
 }
 
-export default pageWithLayout(Home);
+export default pageWithLayout(pageWithoutLayout(Home));
