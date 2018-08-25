@@ -8,7 +8,7 @@ const defaultHeaders = {
 };
 
 const AUTH_TOKEN =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiMDMzOTQ0ZjAtYTcyYS0xMWU4LWJmYTktYjExM2UzNjkyODFmIiwiaWF0IjoxNTM1MDY2NTA0fQ.ld5SwfP7KWF-oTVbxqLaZz9yolaNuDSz95VybSeWV-M";
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1dWlkIjoiNjg5YjE4NTAtYTg4ZC0xMWU4LTgwN2ItY2ZiMzIzOTU2MjQwIiwiaWF0IjoxNTM1MjE4NjA5fQ.UiNxomAqOIn4Y8tThaYwfZw4kPhCOynZFcI5G4ql-GY";
 
 const queryParams = params =>
   Object.keys(params)
@@ -40,10 +40,9 @@ export const makeFetch = (path, opts = {}) => {
   const fetchOpts = makeFetchOpts(opts);
   return fetch(url, fetchOpts)
     .then(resp => {
-      // if (resp.ok) return resp.json();
+      if (resp.ok) return resp.json();
       // const err = resp.stausText;
       // throw new Error(err);
-      console.log(resp);
     })
     .catch(error => {
       console.log(error);
