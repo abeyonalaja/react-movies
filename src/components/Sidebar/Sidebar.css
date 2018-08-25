@@ -3,7 +3,6 @@
   background: linear-gradient(to bottom, $lighter, $darker);
   padding: 25px;
   color: $white;
-  margin-right: 15px;
 
   ul {
     list-style-type: none;

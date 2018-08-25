@@ -373,7 +373,7 @@ body,
     width: auto;
   }
 
-@media (min-width: 80px) {
+@media (min-width: 480px) {
   .container {
     display: flex;
     overflow: hidden;
@@ -404,7 +404,6 @@ body,
   background: linear-gradient(to bottom, rgba(75, 51, 209, 1), rgba(90, 48, 181, 1));
   padding: 25px;
   color: rgba(255, 255, 255, 1);
-  margin-right: 15px;
 }
 
 .sidebar ul {
